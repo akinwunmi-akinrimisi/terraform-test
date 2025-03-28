@@ -142,7 +142,7 @@ resource "aws_instance" "web_instance" {
   ami = data.aws_ssm_parameter.instance_ami.value 
   instance_type = "t2.micro"
   subnet_id = aws_subnet.public_subnet_1.id
-  security_groups = [aws_security_group.web_sg.name]
+  security_groups = [aws_security_group.web_sg.id]
   key_name = "myKeyPair" 
   associate_public_ip_address = true
 
